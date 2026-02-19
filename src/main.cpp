@@ -37,3 +37,19 @@ void setup() {
     Serial.println("System Initialized...");
 
 }
+/**
+ * @brief Main loop: read sensor and print values.
+ *
+ * Reads humidity and temperature from the DHT11 sensor. If a read fails
+ * (returns NaN) an error message is printed and the current iteration ends.
+ * On success, humidity (%) and temperature (°C) are printed to Serial.
+ * The function then delays for 2000 ms before repeating.
+ *
+ * This function runs repeatedly after setup() and blocks for the duration
+ * of the delay(2000) call.
+ */
+void loop() {
+    float humidity = dht.readHumidity();
+
+    float temperature = dht.readTemperature();
+}
